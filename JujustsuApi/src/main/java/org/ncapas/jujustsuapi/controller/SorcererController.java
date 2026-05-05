@@ -49,4 +49,25 @@ public class SorcererController {
     public void delete(@PathVariable UUID id){
         sorcererService.delete(id);
     }
+
+    //Obtener por school
+    @GetMapping("/school/{school}")
+    public ResponseEntity<List<Sorcerer>> findBySchool(@PathVariable String school){
+        sorcererService.findBySchool(school);
+        return ResponseEntity.ok(sorcererService.findBySchool(school));
+    }
+
+    //Obtener por grade
+    @GetMapping("/grade/{grade}")
+    public ResponseEntity<List<Sorcerer>> findByGrade(@PathVariable String grade) {
+        return ResponseEntity.status(HttpStatus.OK).body(sorcererService.findByGrade(grade));
+    }
+
+    //Obtener hechiceros activos
+    @GetMapping("/active")
+    public ResponseEntity<List<Sorcerer>> findByIsActiveTrue(){
+        sorcererService.findByIsActive();
+        return ResponseEntity.status(HttpStatus.OK).body(sorcererService.findByIsActive());
+    }
+
 }
