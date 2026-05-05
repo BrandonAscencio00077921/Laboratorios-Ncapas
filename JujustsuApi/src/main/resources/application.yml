@@ -1,0 +1,18 @@
+spring:
+  application:
+      name=JujustsuApi
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jujutsu_db
+    username: postgres
+    password: 00077921
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
