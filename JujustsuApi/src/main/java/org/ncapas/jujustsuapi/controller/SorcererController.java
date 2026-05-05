@@ -37,5 +37,16 @@ public class SorcererController {
         return ResponseEntity.ok(sorcererService.findById(id));
     }
 
+    //Actualizar por id
+    @PutMapping("/{id}")
+    public ResponseEntity<Sorcerer> update(@PathVariable UUID id, @RequestBody Sorcerer sorcerer){
+        sorcererService.update(id, sorcerer);
+        return ResponseEntity.ok().build();
+    }
 
+    //Eliminar por id
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable UUID id){
+        sorcererService.delete(id);
+    }
 }
