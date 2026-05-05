@@ -2,9 +2,9 @@ spring:
   application:
       name=JujustsuApi
   datasource:
-    url: jdbc:postgresql://localhost:5432/jujutsu_db
-    username: postgres
-    password: 00077921
+    url: jdbc:postgresql://localhost:5432/DATABASE_NAME
+    username: USERNAME
+    password: PASSWORD
   jpa:
     show-sql: true
     hibernate:
